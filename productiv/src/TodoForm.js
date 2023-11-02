@@ -19,7 +19,7 @@ const BLANK_FORM = {
 function TodoForm({ initialFormData = BLANK_FORM, handleSave }) {
 
   const [formData, setFormData] = useState(initialFormData);
-
+  //TODO: change to number for priority
   //console.log("formData state = ", formData);
   /** Update form input. */
   function handleChange(evt) {

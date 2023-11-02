@@ -17,9 +17,10 @@ import TodoForm from "./TodoForm";
 
 function EditableTodo({ todo, update, remove }) {
   const [isEditing, setIsEditing] = useState(false);
+
   /** Toggle if this is being edited */
   function toggleEdit() {
-    setIsEditing(!isEditing);
+    setIsEditing(isEditing => !isEditing);
   }
 
   /** Call remove fn passed to this. */
@@ -54,11 +55,11 @@ function EditableTodo({ todo, update, remove }) {
       <Todo todo={todo} />
     </div>);
 
-  const todoEditFormHtml = <TodoForm initialFormData={todo} handleSave={handleSave} />;
+  const todoEditingHtml = <TodoForm initialFormData={todo} handleSave={handleSave} />;
 
   return (
     <div className="EditableTodo">
-      {isEditing ? todoEditFormHtml : todoHtml}
+      {isEditing ? todoEditingHtml : todoHtml}
     </div>
   );
 }
