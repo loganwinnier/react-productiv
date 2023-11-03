@@ -21,6 +21,6 @@ describe("TodoApp Tests", function () {
         result.debug;
         expect(result.queryByText("test-todo")).toBeInTheDocument();
         expect(result.queryByText("test-todo-description")).toBeInTheDocument();
-        expect(result.queryByHtml("1")).toBeInTheDocument();
+        expect(result.queryByText("1")).toBeInTheDocument();
     });
 });
