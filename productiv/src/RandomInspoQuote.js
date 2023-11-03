@@ -1,5 +1,12 @@
+import { useState, useEffect } from "react";
+import { getInspoQuote } from "./inspoQuoteApi";
+
+/**
+ *
+ */
+
 function RandomInspoQuote() {
-  const [quote, setQuote] = useState(null);
+  const [quote, setQuote] = useState({});
 
   useEffect(async () => {
     const quote = await getInspoQuote();

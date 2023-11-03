@@ -8,16 +8,24 @@ import RandomInspoQuote from "./RandomInspoQuote";
 
 function Quote() {
 
+  const [showRandomQuote, setShowRandomQuote] = useState(false);
+
   function handleGetQuote() {
-    return 
+    setShowRandomQuote(true);
   }
 
   return (
     <div className="Quote">
-        <form onSubmit={handleGetQuote}>
-          <button>Get Inspirational Quote</button>
-        </form>
-    </div>
+      {
+        showRandomQuote
+          ?
+          <RandomInspoQuote />
+          :
+          <form onSubmit={handleGetQuote}>
+            <button>Get Inspirational Quote</button>
+          </form>
+      }
+    </div >
   );
 }
 
