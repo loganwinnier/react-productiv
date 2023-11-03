@@ -13,6 +13,7 @@ import Quote from './Quote';
 function RandomInspoQuote() {
   const [clicked, setClicked] = useState(false);
 
+<<<<<<< HEAD
   /** gets new inspirational quote updates quote state */
   const newQuote = async () => {
     const quote = await getInspoQuote();
@@ -38,6 +39,28 @@ function RandomInspoQuote() {
           :
           <button onClick={handleGetQuote}>Click here for an inspirational quøte!</button>
       }
+=======
+  function updateQuote() {
+    setQuote({});
+  }
+
+  useEffect(() => {
+    async function fetchQuote() {
+      const quote = await getInspoQuote();
+      setQuote(quote);
+    }
+    fetchQuote();
+  }, []);
+
+  return (
+    <div className="RandomInspoQuote">
+      <p>
+        <i>{quote.text} - {quote.author}</i>
+      </p>
+      <form onSubmit={updateQuote}>
+        <button>Nü quøte</button>
+      </form>
+>>>>>>> 068b0c302dd76d3151f62f25b63462e9ad0e018a
     </div>
   );
 }
