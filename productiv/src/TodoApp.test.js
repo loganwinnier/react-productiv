@@ -63,6 +63,7 @@ describe("TodoApp Tests", function () {
 
     expect(result.queryByText("edited-test")).toBeInTheDocument();
 
+
     fireEvent.click(editButton);
 
     //Replace description with new description
@@ -75,17 +76,19 @@ describe("TodoApp Tests", function () {
 
     expect(result.queryByText("edited-test-description")).toBeInTheDocument();
 
-    // //Replace priority  with new priority
-    // expect(result.queryByText("3")).not.toBeInTheDocument();
 
+    // fireEvent.click(editButton);
+
+    // expect(result.queryAllByText("<small>3</small>").length).toEqual(1);
+
+    // //Replace priority  with new priority
     // const priorityInput = result.getAllByLabelText("Priority:")[0];
     // fireEvent.change(priorityInput, {
     //   target: { value: "3" }
     // });
-
     // fireEvent.click(submitButton);
 
-    // expect(result.queryByText("3")).toBeInTheDocument();
+    // expect(result.queryAllByText("<small>3</small>").length).toEqual(2);
 
   });
 
