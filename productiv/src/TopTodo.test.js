@@ -1,15 +1,11 @@
 import React from "react";
-import { fireEvent, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import TopTodo from "./TopTodo";
 import { TEST_TODOS } from "./_commonTest";
 
 describe("TopTodo component", function () {
   it("renders without crashing", function () {
     render(<TopTodo todos={TEST_TODOS} />);
-  });
-
-  it("contains title, description, priority", function () {
-    const result = render(<TopTodo todos={TEST_TODOS} />);
   });
 
   it("returns null on empty input", function () {
@@ -21,6 +17,9 @@ describe("TopTodo component", function () {
     expect(result.queryByText(TEST_TODOS[0].title)).toBeInTheDocument();
     expect(result.queryByText(TEST_TODOS[0].description)).toBeInTheDocument();
     expect(result.queryByText(TEST_TODOS[0].priority)).toBeInTheDocument();
+    expect(result.queryByText(TEST_TODOS[1].title)).not.toBeInTheDocument();
+    expect(result.queryByText(TEST_TODOS[1].description)).not.toBeInTheDocument();
+    expect(result.queryByText(TEST_TODOS[1].priority)).not.toBeInTheDocument();
 
   });
 
