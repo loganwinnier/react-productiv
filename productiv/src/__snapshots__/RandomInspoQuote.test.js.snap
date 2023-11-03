@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RandomInspoQuote matches snapshot 1`] = `
+<div>
+  <div
+    class="RandomInspoQuote"
+  >
+    <button>
+      Click here for an inspirational quøte!
+    </button>
+  </div>
+</div>
+`;

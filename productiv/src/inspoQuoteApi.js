@@ -3,7 +3,7 @@ const BASE_URL = "https://inspo-quotes-api.herokuapp.com/quotes";
 /**
  * Get's a random inspirational quote from the Inspirational Quote API.
  * Returns object:
- * { quote: { text, author } }
+ * { text, author } 
  */
 
 async function getInspoQuote() {
