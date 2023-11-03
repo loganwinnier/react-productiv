@@ -6,13 +6,13 @@ import Quote from "./Quote";
  * - Subheader: String containing smaller text.
  */
 
-function Header({ Header, subHeader }) {
+function Header({ text, subtext }) {
   return (
     <div className="Header">
       <header className="container-fluid pt-4 pb-1">
           <div className="container">
-            <h1>{Header}</h1>
-            <p className="lead">{subHeader}</p>
+            <h1>{text}</h1>
+            <p className="lead">{subtext}</p>
             <Quote />
           </div>
     </header>

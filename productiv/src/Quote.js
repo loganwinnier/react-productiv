@@ -1,19 +1,24 @@
-import { getInspoQuote } from "./inspoQuoteApi";
+import { useState } from "react";
+import RandomInspoQuote from "./RandomInspoQuote";
 
-/** Quote
- *
+/** Quote - Displays button to get quote or random quote.
+ * State:
+ * - quote: Object like { text, author }
  */
 
-async function Quote() {
-  const quote = await getInspoQuote();
+function Quote() {
+
+  function handleGetQuote() {
+    return 
+  }
 
   return (
     <div className="Quote">
-      <p>
-        <i>{ quote.text } - { quote.author }</i>
-      </p>
+        <form onSubmit={handleGetQuote}>
+          <button>Get Inspirational Quote</button>
+        </form>
     </div>
-  )
+  );
 }
 
 export default Quote;

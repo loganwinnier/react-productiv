@@ -13,7 +13,7 @@ import "./App.css";
 function App() {
   return (
       <main className="App">
-        <Header/>
+        <Header text="Prødüctîv" subtext="The best name in todo management."/>
 
         <section className="container mt-4">
           <TodoApp initialTodos={[
