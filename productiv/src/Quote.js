@@ -21,9 +21,6 @@ function Quote() {
           ?
           <div>
             <RandomInspoQuote />
-            <form onSubmit={handleGetQuote}>
-              <button>Nü quøte</button>
-            </form>
           </div>
           :
           <form onSubmit={handleGetQuote}>

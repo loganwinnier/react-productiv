@@ -8,9 +8,16 @@ import { getInspoQuote } from "./inspoQuoteApi";
 function RandomInspoQuote() {
   const [quote, setQuote] = useState({});
 
-  useEffect(async () => {
-    const quote = await getInspoQuote();
-    setQuote(quote);
+  function updateQuote() {
+    setQuote({});
+  }
+
+  useEffect(() => {
+    async function fetchQuote() {
+      const quote = await getInspoQuote();
+      setQuote(quote);
+    }
+    fetchQuote();
   }, []);
 
   return (
@@ -18,6 +25,9 @@ function RandomInspoQuote() {
       <p>
         <i>{quote.text} - {quote.author}</i>
       </p>
+      <form onSubmit={updateQuote}>
+        <button>Nü quøte</button>
+      </form>
     </div>
   );
 }
