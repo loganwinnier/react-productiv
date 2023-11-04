@@ -8,23 +8,24 @@ describe("TopTodo component", function () {
     render(<TopTodo todos={TEST_TODOS} />);
   });
 
+  it("matches snapshot", function () {
+    const { container } = render(<TopTodo todos={TEST_TODOS} />);
+    expect(container).toMatchSnapshot();
+  });
+
   it("returns null on empty input", function () {
     expect(TopTodo({ todos: [] })).toEqual(null);
   });
 
   it("renders correct top todo", function () {
     const result = render(<TopTodo todos={TEST_TODOS} />);
+
     expect(result.queryByText(TEST_TODOS[0].title)).toBeInTheDocument();
     expect(result.queryByText(TEST_TODOS[0].description)).toBeInTheDocument();
     expect(result.queryByText(TEST_TODOS[0].priority)).toBeInTheDocument();
+
     expect(result.queryByText(TEST_TODOS[1].title)).not.toBeInTheDocument();
     expect(result.queryByText(TEST_TODOS[1].description)).not.toBeInTheDocument();
     expect(result.queryByText(TEST_TODOS[1].priority)).not.toBeInTheDocument();
-
-  });
-
-  it("matches snapshot", function () {
-    const { container } = render(<TopTodo todos={TEST_TODOS} />);
-    expect(container).toMatchSnapshot();
   });
 });

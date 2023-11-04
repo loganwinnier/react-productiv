@@ -12,14 +12,14 @@ import Quote from './Quote';
 
 function RandomInspoQuote() {
   const [clicked, setClicked] = useState(false);
+  const [quote, setQuote] = useState(null);
 
   /** gets new inspirational quote updates quote state */
-  const newQuote = async () => {
+  async function newQuote() {
     const quote = await getInspoQuote();
     setQuote(quote);
-  };
 
-  const [quote, setQuote] = useState(newQuote);
+  }
 
   /** Toggles display from initial button state */
   function handleGetQuote() {
